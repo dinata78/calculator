@@ -59,7 +59,7 @@ function operatorButtonHandler(type) { //handle operator button event
 function addDotToDisplay() { //add dot symbol to display variable
   if (isDisplayLastCharacter("%")) return; //prevent adding dot symbol after the percentage symbol
   if (getCurrentNumber() === "") return; //prevent adding dot symbol when there's no number
-  if (!getCurrentNumber().includes(".")) return; //prevent double dot symbol
+  if (getCurrentNumber().includes(".")) return; //prevent double dot symbol
   display += ".";
 }
 
@@ -76,7 +76,7 @@ function acButtonHandler() { //handle AC (all clear) button event
 function addPercentageToDisplay() { //add percentage symbol to display variable
   if (isDisplayLastCharacter(".")) return; //prevent adding percentage symbol after the dot symbol
   if (getCurrentNumber() === "") return; //prevent adding percentage symbol when there's no number
-  if (!getCurrentNumber().includes("%")) return; //prevent double percentage symbol
+  if (getCurrentNumber().includes("%")) return; //prevent double percentage symbol
   display += "%";
 }
 
