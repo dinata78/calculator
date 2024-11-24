@@ -3,22 +3,24 @@
 }
 
 :root {
-  background-color: rgb(0, 0, 0);
   color: white;
   --calculator-width: min(85vw, 480px);
   --calculator-gap-size: 3%;
-  --display-number-color: white;
-  --main-heading-color: #c7c7c7;
-  --calculator-outline-color: #353232;
-  --calculator-display-base-color: #6d6969;
-  --calculator-display-border-color: #181616;
-  --calculator-base-color: rgb(29, 26, 26);
+  --main-background-color: rgb(0, 0, 0);
+  --main-font-color: #c7c7c7;
+  --display-number-color: rgb(255, 255, 255);
+  --button-character-color: #000000;
+  --calculator-outline-color: #323232;
+  --calculator-display-base-color: #696969;
+  --calculator-display-border-color: #161616;
+  --calculator-base-color: rgb(26, 26, 26);
   --number-button-color: #aa9f9f;
   --operator-button-color: #757070;
   --result-button-color: rgb(233, 103, 17);
 }
 
 body {
+  background-color: var(--main-background-color);
   margin: 0;
   height: 100vh;
   display: flex;
@@ -31,7 +33,7 @@ body {
 #main-heading {
   margin: 0;
   font-size: calc(var(--calculator-width) / 12);
-  color: var(--main-heading-color);
+  color: var(--main-font-color);
 }
 
 #main-container {
@@ -69,6 +71,7 @@ body {
     height: calc((100% - var(--calculator-gap-size) * 4) / 5);
     border: none;
     border-radius: 100%;
+    color: var(--button-character-color);
     font-size: calc(var(--calculator-width) / 15);
     font-weight: bold;
 
@@ -88,4 +91,29 @@ body {
 
 #result-button {
   background-color: var(--result-button-color);
+}
+
+#change-theme {
+  width: var(--calculator-width);
+  height: calc(var(--calculator-width) / 10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--calculator-width) / 50);
+  background-color: var(--calculator-base-color);
+  border: calc(var(--calculator-width) / 125) solid var(--calculator-outline-color);
+  border-radius: calc(var(--calculator-width) / 100);
+
+  label {
+    font-size: calc(var(--calculator-width) / 20);
+    color: var(--main-font-color);
+  }
+
+  select {
+    padding-inline: calc(var(--calculator-width) / 50);
+    font-size: calc(var(--calculator-width) / 25);
+    color: var(--main-font-color);
+    background-color: var(--calculator-base-color);
+  }
+
 }
