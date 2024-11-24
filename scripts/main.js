@@ -1,3 +1,4 @@
+import { numberButtonHandler, operatorButtonHandler, dotButtonHandler, acButtonHandler, percentageButtonHandler, deleteButtonHandler, resultButtonHandler } from "./logic.js";
 
 const acButton = document.querySelector("#ac-button");
 const percentageButton = document.querySelector("#percentage-button");
@@ -21,4 +22,26 @@ const nineButton = document.querySelector("#nine-button");
 const zeroButton = document.querySelector("#zero-button");
 const doubleZeroButton = document.querySelector("#double-zero-button");
 
-const calculatorDisplay = document.querySelector("#calculator-display");
+oneButton.addEventListener("click", () => numberButtonHandler("1"));
+twoButton.addEventListener("click", () => numberButtonHandler("2"));
+threeButton.addEventListener("click", () => numberButtonHandler("3"));
+fourButton.addEventListener("click", () => numberButtonHandler("4"));
+fiveButton.addEventListener("click", () => numberButtonHandler("5"));
+sixButton.addEventListener("click", () => numberButtonHandler("6"));
+sevenButton.addEventListener("click", () => numberButtonHandler("7"));
+eightButton.addEventListener("click", () => numberButtonHandler("8"));
+nineButton.addEventListener("click", () => numberButtonHandler("9"));
+zeroButton.addEventListener("click", () => numberButtonHandler("0"));
+doubleZeroButton.addEventListener("click", () => numberButtonHandler("00"));
+
+addButton.addEventListener("click", () => operatorButtonHandler("add"));
+subtractButton.addEventListener("click", () => operatorButtonHandler("subtract"));
+multiplyButton.addEventListener("click", () => operatorButtonHandler("multiply"));
+divideButton.addEventListener("click", () => operatorButtonHandler("divide"));
+
+dotButton.addEventListener("click", dotButtonHandler);
+acButton.addEventListener("click", acButtonHandler);
+percentageButton.addEventListener("click", percentageButtonHandler);
+deleteButton.addEventListener("click", deleteButtonHandler);
+
+resultButton.addEventListener("click", resultButtonHandler);
