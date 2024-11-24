@@ -110,7 +110,7 @@ function resultButtonHandler() { //handle result button event
   const filtered = display.replace("x", "*").replace("%", "/100"); //filter display to an evaluable expression
   const result = eval(filtered); //evaluate
   calculatorDisplay.textContent = result; //show result as calculator display
-  display = "0"; //reset display value
+  display = String(result); //set previous result as display value
 }
 
 render();
