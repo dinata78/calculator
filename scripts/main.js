@@ -1,5 +1,6 @@
 import { numberButtonHandler, operatorButtonHandler, dotButtonHandler, acButtonHandler, percentageButtonHandler, deleteButtonHandler, resultButtonHandler } from "./logic.js";
 
+//initialize DOM selectors
 const acButton = document.querySelector("#ac-button");
 const percentageButton = document.querySelector("#percentage-button");
 const deleteButton = document.querySelector("#delete-button");
@@ -22,6 +23,7 @@ const nineButton = document.querySelector("#nine-button");
 const zeroButton = document.querySelector("#zero-button");
 const doubleZeroButton = document.querySelector("#double-zero-button");
 
+//add each button's event listener
 oneButton.addEventListener("click", () => numberButtonHandler("1"));
 twoButton.addEventListener("click", () => numberButtonHandler("2"));
 threeButton.addEventListener("click", () => numberButtonHandler("3"));
@@ -45,3 +47,17 @@ percentageButton.addEventListener("click", percentageButtonHandler);
 deleteButton.addEventListener("click", deleteButtonHandler);
 
 resultButton.addEventListener("click", resultButtonHandler);
+
+//add interacting with calculator with keyboard support
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Delete") acButtonHandler();
+  if (e.key === "%") percentageButtonHandler();
+  if (e.key === "Backspace") deleteButtonHandler();
+  if (e.key === "+") operatorButtonHandler("add");
+  if (e.key === "-") operatorButtonHandler("subtract");
+  if (e.key === "x" || e.key === "*") operatorButtonHandler("multiply");
+  if (e.key === "/") operatorButtonHandler("divide");
+  if (e.key < 10) numberButtonHandler(e.key);
+  if (e.key === ".") dotButtonHandler();
+  if (e.key === "Enter") resultButtonHandler();
+})
