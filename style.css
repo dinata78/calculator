@@ -42,7 +42,7 @@ body {
   border: calc(var(--calculator-width) / 60) solid var(--calculator-border-color);
   border-radius: calc(var(--calculator-width) / 60);
   width: var(--calculator-width);
-  box-shadow: calc(var(--calculator-width) / 100) calc(var(--calculator-width) / 100) calc(var(--calculator-width) / 100) black;
+  box-shadow: 0 0 calc(var(--calculator-width) / 25) black;
 }
 
 #calculator-display {
