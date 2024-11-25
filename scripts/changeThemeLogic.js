@@ -7,7 +7,8 @@ function setTheme(selectedTheme) {
   document.body.style.backgroundImage = theme.imageUrl;
 
   const root = document.querySelector(":root");
-  root.style.setProperty("--main-font-color", theme.mainFontColor);
+  root.style.setProperty("--heading-font-color", theme.headingFontColor);
+  root.style.setProperty("--change-theme-font-color", theme.changeThemeFontColor);
   root.style.setProperty("--display-font-color", theme.displayFontColor);
   root.style.setProperty("--display-base-color", theme.displayBaseColor);
   root.style.setProperty("--display-border-color", theme.displayBorderColor);

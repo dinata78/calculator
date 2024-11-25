@@ -1,3 +1,5 @@
+import { setTheme } from "./changeThemeLogic.js";
+
 export { render, numberButtonHandler, operatorButtonHandler, dotButtonHandler, acButtonHandler, percentageButtonHandler, deleteButtonHandler, resultButtonHandler };
 
 const calculatorDisplay = document.querySelector("#calculator-display");
@@ -6,6 +8,7 @@ let display = "0";
 
 function render() { //render the calculator display using the value of display variable
   calculatorDisplay.textContent = display;
+  setTheme("classic-light")
 }
 
 function isDisplayLastCharacter(char) { //check if display variable's last character is equal to the value of the parameter passed to the function

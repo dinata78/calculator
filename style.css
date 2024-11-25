@@ -6,7 +6,8 @@
   color: white;
   --calculator-width: min(85vw, 480px);
   --calculator-gap-size: 3%;
-  --main-font-color: #afafaf;
+  --heading-font-color: #afafaf;
+  --change-theme-font-color: #cccccc;
   --display-font-color: #ffffff;
   --display-base-color: #2b2b2b;
   --display-border-color: #000000;
@@ -33,7 +34,7 @@ body {
 #main-heading {
   margin: 0;
   font-size: calc(var(--calculator-width) / 12);
-  color: var(--main-font-color);
+  color: var(--heading-font-color);
 }
 
 #main-container {
@@ -58,7 +59,7 @@ body {
 }
 
 #calculator-buttons {
-  height: 85%;
+  height: 85.1%;
   background-color: var(--calculator-base-color);
   padding: var(--calculator-gap-size);
   border-top: 8px solid var(--calculator-border-color);
@@ -106,13 +107,13 @@ body {
 
   label {
     font-size: calc(var(--calculator-width) / 20);
-    color: var(--main-font-color);
+    color: var(--change-theme-font-color);
   }
 
   select {
     padding-inline: calc(var(--calculator-width) / 50);
     font-size: calc(var(--calculator-width) / 25);
-    color: var(--main-font-color);
+    color: var(--change-theme-font-color);
     background-color: var(--calculator-base-color);
   }
 
