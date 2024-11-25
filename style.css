@@ -6,7 +6,6 @@
   color: white;
   --calculator-width: min(85vw, 480px);
   --calculator-gap-size: 3%;
-  --main-background-color: rgb(0, 0, 0);
   --main-font-color: #afafaf;
   --display-number-color: rgb(255, 255, 255);
   --button-character-color: #000000;
