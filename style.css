@@ -7,12 +7,12 @@
   --calculator-width: min(85vw, 480px);
   --calculator-gap-size: 3%;
   --main-font-color: #afafaf;
-  --display-number-color: rgb(255, 255, 255);
-  --button-character-color: #000000;
-  --calculator-outline-color: #4e4e4e;
-  --calculator-display-base-color: #2b2b2b;
-  --calculator-display-border-color: #000000;
+  --display-font-color: rgb(255, 255, 255);
+  --display-base-color: #2b2b2b;
+  --display-border-color: #000000;
   --calculator-base-color: rgb(26, 26, 26);
+  --calculator-border-color: #4e4e4e;
+  --button-font-color: #000000;
   --number-button-color: #aa9f9f;
   --operator-button-color: #757070;
   --result-button-color: rgb(233, 103, 17);
@@ -39,7 +39,7 @@ body {
 
 #main-container {
   height: calc(var(--calculator-width) * 1.5);
-  border: calc(var(--calculator-width) / 60) solid var(--calculator-outline-color);
+  border: calc(var(--calculator-width) / 60) solid var(--calculator-border-color);
   border-radius: calc(var(--calculator-width) / 60);
   width: var(--calculator-width);
   box-shadow: calc(var(--calculator-width) / 100) calc(var(--calculator-width) / 100) calc(var(--calculator-width) / 100) black;
@@ -47,14 +47,14 @@ body {
 
 #calculator-display {
   height: 15%;
-  background-color: var(--calculator-display-base-color);
-  border: calc(var(--calculator-width) / 40) solid var(--calculator-display-border-color);
+  background-color: var(--display-base-color);
+  border: calc(var(--calculator-width) / 40) solid var(--display-border-color);
   padding-inline: 5%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   font-size: calc(var(--calculator-width) / 15);
-  color: var(--display-number-color);
+  color: var(--display-font-color);
   overflow: hidden;
 }
 
@@ -62,7 +62,7 @@ body {
   height: 85%;
   background-color: var(--calculator-base-color);
   padding: var(--calculator-gap-size);
-  border-top: 8px solid var(--calculator-outline-color);
+  border-top: 8px solid var(--calculator-border-color);
   display: flex;
   flex-wrap: wrap;
   gap: var(--calculator-gap-size);
@@ -72,7 +72,7 @@ body {
     height: calc((100% - var(--calculator-gap-size) * 4) / 5);
     border: none;
     border-radius: 100%;
-    color: var(--button-character-color);
+    color: var(--button-font-color);
     font-size: calc(var(--calculator-width) / 15);
     font-weight: bold;
 
@@ -102,7 +102,7 @@ body {
   align-items: center;
   gap: calc(var(--calculator-width) / 50);
   background-color: var(--calculator-base-color);
-  border: calc(var(--calculator-width) / 125) solid var(--calculator-outline-color);
+  border: calc(var(--calculator-width) / 125) solid var(--calculator-border-color);
   border-radius: calc(var(--calculator-width) / 100);
 
   label {
