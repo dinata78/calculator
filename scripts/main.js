@@ -1,4 +1,5 @@
 import { render, numberButtonHandler, operatorButtonHandler, dotButtonHandler, acButtonHandler, percentageButtonHandler, deleteButtonHandler, resultButtonHandler } from "./calculatorLogic.js";
+import { setTheme } from "./changeThemeLogic.js";
 
 const calculator = (() => {
   //initialize DOM selectors
@@ -24,10 +25,14 @@ const calculator = (() => {
   const zeroButton = document.querySelector("#zero-button");
   const doubleZeroButton = document.querySelector("#double-zero-button");
 
+  const themeInput = document.querySelector("#theme");
+
+
   function init() {
     render();
     setEvents();
     setKeyboardSupportEvents();
+    setChangeThemeEvent();
   }
 
   function setEvents() {
@@ -71,6 +76,10 @@ const calculator = (() => {
       if (e.key === ".") dotButtonHandler();
       if (e.key === "Enter") resultButtonHandler();
     })
+  }
+
+  function setChangeThemeEvent() {
+    themeInput.addEventListener("change", () => setTheme(themeInput.value));
   }
 
   return { init };
