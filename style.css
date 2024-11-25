@@ -7,15 +7,15 @@
   --calculator-width: min(85vw, 480px);
   --calculator-gap-size: 3%;
   --main-font-color: #afafaf;
-  --display-font-color: rgb(255, 255, 255);
+  --display-font-color: #fff;
   --display-base-color: #2b2b2b;
   --display-border-color: #000000;
-  --calculator-base-color: rgb(26, 26, 26);
+  --calculator-base-color: #1a1a1a;
   --calculator-border-color: #4e4e4e;
   --button-font-color: #000000;
   --number-button-color: #aa9f9f;
   --operator-button-color: #757070;
-  --result-button-color: rgb(233, 103, 17);
+  --result-button-color: #e96711;
 }
 
 body {
