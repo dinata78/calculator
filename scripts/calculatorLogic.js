@@ -1,4 +1,4 @@
-export { numberButtonHandler, operatorButtonHandler, dotButtonHandler, acButtonHandler, percentageButtonHandler, deleteButtonHandler, resultButtonHandler };
+export { render, numberButtonHandler, operatorButtonHandler, dotButtonHandler, acButtonHandler, percentageButtonHandler, deleteButtonHandler, resultButtonHandler };
 
 const calculatorDisplay = document.querySelector("#calculator-display");
 
@@ -112,5 +112,3 @@ function resultButtonHandler() { //handle result button event
   calculatorDisplay.textContent = result; //show result as calculator display
   display = String(result); //set previous result as display value
 }
-
-render();
