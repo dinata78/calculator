@@ -7,12 +7,12 @@
   --calculator-width: min(85vw, 480px);
   --calculator-gap-size: 3%;
   --main-background-color: rgb(0, 0, 0);
-  --main-font-color: #c7c7c7;
+  --main-font-color: #afafaf;
   --display-number-color: rgb(255, 255, 255);
   --button-character-color: #000000;
-  --calculator-outline-color: #323232;
-  --calculator-display-base-color: #696969;
-  --calculator-display-border-color: #161616;
+  --calculator-outline-color: #4e4e4e;
+  --calculator-display-base-color: #2b2b2b;
+  --calculator-display-border-color: #000000;
   --calculator-base-color: rgb(26, 26, 26);
   --number-button-color: #aa9f9f;
   --operator-button-color: #757070;
@@ -20,7 +20,8 @@
 }
 
 body {
-  background-color: var(--main-background-color);
+  background-image: url(img/classic-dark-bg.jpg);
+  background-size: cover;
   margin: 0;
   height: 100vh;
   display: flex;
@@ -34,6 +35,7 @@ body {
   margin: 0;
   font-size: calc(var(--calculator-width) / 12);
   color: var(--main-font-color);
+  text-shadow: 3px 3px black;
 }
 
 #main-container {
@@ -41,7 +43,7 @@ body {
   border: calc(var(--calculator-width) / 60) solid var(--calculator-outline-color);
   border-radius: calc(var(--calculator-width) / 60);
   width: var(--calculator-width);
-  
+  box-shadow: calc(var(--calculator-width) / 100) calc(var(--calculator-width) / 100) calc(var(--calculator-width) / 100) black;
 }
 
 #calculator-display {
