@@ -22,7 +22,7 @@ function addNumberToDisplay(num) { //add number to display variable
  
   if (getCurrentNumber() === "0") { 
     if (num === "0" || num === "00") return; //prevent adding 0 or 00 when current number is 0
-    deleteButtonHandler(); //delete the number 0 before adding new number
+    deleteDisplayLastCharacter(); //delete the number 0 before adding new number
     display += num;
     return;
   }
