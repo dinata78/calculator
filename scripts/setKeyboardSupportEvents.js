@@ -51,6 +51,9 @@ function translateButtonType(key) { //translate button type to match each button
 function setKeyboardSupportEvents() {
   //add event listener to support keyboard user
   document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { //add shortcut for removing change-theme input's focus
+      document.querySelector("#theme").blur();
+    }
     if (document.activeElement === document.querySelector("#theme")) return; //disable interacting with calculator via keyboards while change-theme input have focus
 
     const key = e.key;
