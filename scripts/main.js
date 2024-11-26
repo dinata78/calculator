@@ -1,5 +1,6 @@
 import { render, numberButtonHandler, operatorButtonHandler, dotButtonHandler, acButtonHandler, percentageButtonHandler, deleteButtonHandler, resultButtonHandler } from "./calculatorLogic.js";
 import { setTheme } from "./changeThemeLogic.js";
+import { setKeyboardSupportEvents } from "./setKeyboardSupportEvents.js";
 
 const calculator = (() => {
   //initialize DOM selectors
@@ -30,12 +31,12 @@ const calculator = (() => {
 
   function init() {
     render();
-    setEvents();
-    setKeyboardSupportEvents();
-    setChangeThemeEvent();
+    initEvents();
+    initKeyboardSupportEvents();
+    initChangeThemeEvent();
   }
 
-  function setEvents() {
+  function initEvents() {
     //add each button's event listener
     oneButton.addEventListener("click", () => numberButtonHandler("1"));
     twoButton.addEventListener("click", () => numberButtonHandler("2"));
@@ -62,23 +63,11 @@ const calculator = (() => {
     resultButton.addEventListener("click", resultButtonHandler);
   }
 
-  function setKeyboardSupportEvents() {
-    //add interacting with calculator with keyboard support
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Delete") acButtonHandler();
-      if (e.key === "%") percentageButtonHandler();
-      if (e.key === "Backspace") deleteButtonHandler();
-      if (e.key === "+") operatorButtonHandler("add");
-      if (e.key === "-") operatorButtonHandler("subtract");
-      if (e.key === "x" || e.key === "*") operatorButtonHandler("multiply");
-      if (e.key === "/") operatorButtonHandler("divide");
-      if (e.key < 10) numberButtonHandler(e.key);
-      if (e.key === ".") dotButtonHandler();
-      if (e.key === "Enter") resultButtonHandler();
-    })
+  function initKeyboardSupportEvents() {
+    setKeyboardSupportEvents();
   }
 
-  function setChangeThemeEvent() {
+  function initChangeThemeEvent() {
     themeInput.addEventListener("change", () => setTheme(themeInput.value));
   }
 

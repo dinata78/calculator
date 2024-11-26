@@ -82,6 +82,10 @@ body {
   }
 }
 
+.button-active {
+  opacity: 70%;
+}
+
 .number-button {
   background-color: var(--number-button-color);
 }
