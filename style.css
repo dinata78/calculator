@@ -31,7 +31,7 @@ body {
   gap: min(1.5vw, 12px);
 }
 
-header {
+#calculator-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,10 +68,10 @@ header {
 }
 
 #main-container {
+  width: var(--calculator-width);
   height: calc(var(--calculator-width) * 1.5);
   border: calc(var(--calculator-width) / 60) solid var(--calculator-border-color);
   border-radius: calc(var(--calculator-width) / 60);
-  width: var(--calculator-width);
   box-shadow: 0 0 calc(var(--calculator-width) / 25) black;
 }
 
@@ -151,4 +151,65 @@ header {
     background-color: var(--calculator-base-color);
   }
 
+}
+
+#info-modal {
+  width: var(--calculator-width);
+  height: calc(var(--calculator-width) * 1.5);
+  border: calc(var(--calculator-width) / 60) solid var(--calculator-border-color);
+  border-radius: calc(var(--calculator-width) / 60);
+  background-color: var(--calculator-base-color);
+  padding: 0 min(2%, 16px);
+
+  h1 {
+    margin-block: 5%;
+    color: #f5f5f5;
+    font-size: calc(var(--calculator-width) / 19);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 2%;
+      color: #f5f5f5;
+      font-size: calc(var(--calculator-width) / 25);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+#info-modal::backdrop {
+  opacity: 0%;
+}
+
+#modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#modal-footer {
+  margin-block: 5%;
+  color: #cfcfcf;
+  font-size: calc(var(--calculator-width) / 23);
+}
+
+#modal-close-button {
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    opacity: 50%;
+  }
+}
+
+#info-close-svg {
+  width: calc(var(--calculator-width) / 19);
+  fill: #f5f5f5;
 }

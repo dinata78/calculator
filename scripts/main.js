@@ -34,6 +34,7 @@ const calculator = (() => {
     initEvents();
     initKeyboardSupportEvents();
     initChangeThemeEvent();
+    initInfoButtonEvent();
   }
 
   function initEvents() {
@@ -71,8 +72,22 @@ const calculator = (() => {
     themeInput.addEventListener("change", () => setTheme(themeInput.value));
   }
 
-  return { init };
+  function initInfoButtonEvent() {
+    const infoModal = document.querySelector("#info-modal");
+    const infoButton = document.querySelector("#info");
+    const modalCloseButton = document.querySelector("#modal-close-button");
 
+    infoButton.addEventListener("click", () => {
+      infoModal.showModal();
+    });
+
+    modalCloseButton.addEventListener("click", () => {
+      infoModal.close();
+    });
+  }
+
+  return { init };
+  
 })();
 
 calculator.init();

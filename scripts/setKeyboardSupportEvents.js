@@ -51,16 +51,20 @@ function translateButtonType(key) { //translate button type to match each button
 function setKeyboardSupportEvents() {
   //add event listener to support keyboard user
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { //add shortcut for removing change-theme input's focus
-      document.querySelector("#theme").blur();
-    }
-    if (document.activeElement === document.querySelector("#theme")) return; //disable interacting with calculator via keyboards while change-theme input have focus
-
     const key = e.key;
 
-    if (key === "Control") { //add shortcut for focusing onto change-theme input
-      document.querySelector("#theme").focus();
-      return;
+    if (document.activeElement === document.querySelector("#theme") && key !== "Escape") return; //disable interacting with calculator via keyboards while change-theme input have focus, except for Esc key to blur the focus
+
+    switch (key) {
+      case "Control"://shortcut for focusing onto change-theme input
+        document.querySelector("#theme").focus();
+        return;
+      case "Escape": //shortcut for removing change-theme input's focus
+        document.querySelector("#theme").blur();
+        return;
+      case "Shift": //shortcut for opening info modal
+        document.querySelector("#info").click();
+        return;
     }
 
     const buttonType = translateButtonType(key);
