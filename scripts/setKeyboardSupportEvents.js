@@ -1,6 +1,6 @@
 export { setKeyboardSupportEvents };
 
-function translateButtonType(key) {
+function translateButtonType(key) { //translate button type to match each button id's
   if (key < 10) {
     switch (key) {
       case "0":
@@ -49,13 +49,13 @@ function translateButtonType(key) {
 }
 
 function setKeyboardSupportEvents() {
-  //add interacting with calculator with keyboard support
+  //add event listener to support keyboard user
   document.addEventListener("keydown", (e) => {
-    if (document.activeElement === document.querySelector("#theme")) return;
+    if (document.activeElement === document.querySelector("#theme")) return; //disable interacting with calculator via keyboards while change-theme input have focus
 
     const key = e.key;
 
-    if (key === "Control") {
+    if (key === "Control") { //add shortcut for focusing onto change-theme input
       document.querySelector("#theme").focus();
       return;
     }
@@ -63,8 +63,8 @@ function setKeyboardSupportEvents() {
     const buttonType = translateButtonType(key);
     const button = document.querySelector(`#${buttonType}-button`);
     
-    button.classList.add("button-active");
+    button.classList.add("button-active"); //add button active effect
     button.click();
-    setTimeout(() => button.classList.remove("button-active"), 100);
+    setTimeout(() => button.classList.remove("button-active"), 100); //remove button active effect
   })
 }
