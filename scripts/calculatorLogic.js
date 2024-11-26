@@ -19,13 +19,18 @@ function getCurrentNumber() { //get current number, number after the latest oper
 
 function addNumberToDisplay(num) { //add number to display variable
   if (isDisplayLastCharacter("%")) return; //prevent adding number after percentage symbol
-  if (display === "0") {
-    if (num === "00") return; //prevent double zero at the beginning of the expression
-    display = num;
-  }
-  else {
+ 
+  if (getCurrentNumber() === "0") { 
+    if (num === "0" || num === "00") return; //prevent adding 0 or 00 when current number is 0
+    deleteButtonHandler(); //delete the number 0 before adding new number
     display += num;
+    return;
   }
+
+  if (getCurrentNumber() === "" && num === "00") return; //prevent adding 00 when there is no number as current number
+
+  display += num;
+
 }
 
 function numberButtonHandler(num) { //handle number button event
