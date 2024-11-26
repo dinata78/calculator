@@ -31,10 +31,40 @@ body {
   gap: min(1.5vw, 12px);
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #main-heading {
   margin: 0;
   font-size: calc(var(--calculator-width) / 12);
   color: var(--heading-font-color);
+  position: relative;
+  left: calc(var(--calculator-width) / 28);
+}
+
+#info {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  background-color: transparent;
+  border: none;
+  
+  &:active {
+    #info-svg {
+      opacity: 50%;
+    }
+  }
+}
+
+#info-svg {
+  width: calc(var(--calculator-width) / 14);
+  fill: var(--heading-font-color);
 }
 
 #main-container {
