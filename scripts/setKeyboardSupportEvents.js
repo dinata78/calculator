@@ -59,8 +59,8 @@ function setKeyboardSupportEvents() {
       case "Control"://shortcut for focusing onto change-theme input
         document.querySelector("#theme").focus();
         return;
-      case "Escape": //shortcut for removing change-theme input's focus
-        document.querySelector("#theme").blur();
+      case "Escape": //shortcut for removing focus from currently focused element
+        document.activeElement.blur();
         return;
       case "Shift": //shortcut for opening info modal
         document.querySelector("#info").click();
