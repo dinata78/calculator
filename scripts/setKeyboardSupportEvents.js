@@ -70,6 +70,8 @@ function setKeyboardSupportEvents() {
     const buttonType = translateButtonType(key);
     const button = document.querySelector(`#${buttonType}-button`);
     
+    if (!button) return; //stop when button does not exist
+
     button.classList.add("button-active"); //add button active effect
     button.click();
     setTimeout(() => button.classList.remove("button-active"), 100); //remove button active effect
