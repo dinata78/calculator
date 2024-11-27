@@ -1,7 +1,7 @@
 export { setKeyboardSupportEvents };
 
 function translateButtonType(key) { //translate button type to match each button id's
-  if (key < 10) {
+  if (!isNaN(key)) {
     switch (key) {
       case "0":
         return "zero";
