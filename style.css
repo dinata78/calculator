@@ -154,8 +154,9 @@ body {
 }
 
 #info-modal {
-  width: var(--calculator-width);
-  height: calc(var(--calculator-width) * 1.5);
+  width: calc(var(--calculator-width) * 1.2);
+  height: calc(var(--calculator-width) * 1.2);
+  opacity: 85%;
   border: calc(var(--calculator-width) / 60) solid var(--calculator-border-color);
   border-radius: calc(var(--calculator-width) / 60);
   background-color: var(--calculator-base-color);
@@ -185,7 +186,8 @@ body {
 }
 
 #info-modal::backdrop {
-  opacity: 0%;
+  background-color: black;
+  opacity: 70%;
 }
 
 #modal-header {
