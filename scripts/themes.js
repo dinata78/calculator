@@ -3,7 +3,7 @@ export { themes };
 const themes = [
   {
     name: "classic-dark",
-    imageUrl: "url('img/classic-dark-bg.jpg')",
+    imageUrl: "url('img/classic-dark-bg.webp')",
     headingFontColor: "#afafaf",
     changeThemeFontColor: "#cccccc",
     displayFontColor: "#ffffff",
@@ -18,7 +18,7 @@ const themes = [
   },
   {
     name: "classic-light",
-    imageUrl: "url('img/classic-light-bg.jpg')",
+    imageUrl: "url('img/classic-light-bg.webp')",
     headingFontColor: "#3c3c85",
     changeThemeFontColor: "#c5c5f5",
     displayFontColor: "#333366",
