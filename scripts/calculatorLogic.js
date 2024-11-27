@@ -1,11 +1,32 @@
 export { render, numberButtonHandler, operatorButtonHandler, dotButtonHandler, acButtonHandler, percentageButtonHandler, deleteButtonHandler, resultButtonHandler };
 
-const calculatorDisplay = document.querySelector("#calculator-display");
 
 let display = "0";
 
 function render() { //render the calculator display using the value of display variable
-  calculatorDisplay.textContent = display;
+  const calculatorDisplay = document.querySelector
+  ("#calculator-display");
+
+  const modified = addNumberComma(display);
+  calculatorDisplay.textContent = modified;
+  
+}
+
+function addNumberComma(string) {
+  const array = string.split(" ");
+  const newArray = [];
+
+  while (array.length) {
+    const value = array.shift();
+    if (value > 0 || value < 0) {
+      newArray.push(Number(value).toLocaleString());
+    }
+    else {
+      newArray.push(value);
+    }
+  }
+
+  return newArray.join(" ");
 }
 
 function isDisplayLastCharacter(char) { //check if display variable's last character is equal to the value of the parameter passed to the function
@@ -114,6 +135,9 @@ function deleteButtonHandler() { //handle delete button event
 function resultButtonHandler() { //handle result button event
   const filtered = display.replace("x", "*").replace("%", "/100"); //filter display to an evaluable expression
   const result = eval(filtered); //evaluate
-  calculatorDisplay.textContent = result; //show result as calculator display
+
+  const calculatorDisplay = document.querySelector("#calculator-display");
+  calculatorDisplay.textContent = addNumberComma(String(result)); //show result as calculator display
+
   display = String(result); //set previous result as display value
 }
