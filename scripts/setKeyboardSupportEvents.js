@@ -62,7 +62,7 @@ function setKeyboardSupportEvents() {
       case "Escape": //shortcut for removing focus from currently focused element
         document.activeElement.blur();
         return;
-      case "Shift": //shortcut for opening info modal
+      case "Alt": //shortcut for opening info modal
         document.querySelector("#info").click();
         return;
     }
