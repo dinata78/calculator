@@ -10,7 +10,7 @@ function setTheme(selectedTheme) {
   root.style.setProperty("--heading-font-color", theme.headingFontColor);
   root.style.setProperty("--change-theme-font-color", theme.changeThemeFontColor);
   root.style.setProperty("--display-font-color", theme.displayFontColor);
-  root.style.setProperty("--display-base-color", theme.displayBaseColor);
+  root.style.setProperty("--display-base-color", theme.displayBaseColor + "af");
   root.style.setProperty("--display-border-color", theme.displayBorderColor);
   root.style.setProperty("--calculator-base-color", theme.calculatorBaseColor);
   root.style.setProperty("--calculator-border-color", theme.calculatorBorderColor);
