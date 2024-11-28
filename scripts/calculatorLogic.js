@@ -19,7 +19,7 @@ function addNumberComma(string) {
   while (array.length) {
     const value = array.shift();
     if (value > 0 || value < 0) {
-      newArray.push(Number(value).toLocaleString());
+      newArray.push(Number(value).toLocaleString("en", {maximumSignificantDigits: 16}));
     }
     else {
       newArray.push(value);
